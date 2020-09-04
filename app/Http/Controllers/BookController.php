@@ -15,7 +15,8 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all()->toArray();
-        return array_reverse($books);
+        // return array_reverse($books);
+        return $books;
     }
 
     /**
@@ -34,7 +35,7 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function add(Request $request)
     {
         $book = new Book([
             'name' => $request->input('name'),
